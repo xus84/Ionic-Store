@@ -1,0 +1,7 @@
+{
+  "name": "eAPP",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
