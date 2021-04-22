@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 
 
 export interface ICategory {
@@ -12,14 +13,19 @@ export interface IProduct {
   name: string,
   price: number,
   image: string,
+  amount: number,
 }
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
+  private cart = [];
+  private cartItemCount = new BehaviorSubject(0);
  
   constructor() { }
+
+ 
 
   getCategories () {
     let categories = [];
@@ -51,19 +57,22 @@ export class DataService {
       id: 1,
       name: 'Men Shoes',
       price: 150,
-      image: '../../assets/products/shoes.jfif'
+      image: '../../assets/products/shoes.jfif',
+      amount: 1,
     }
     let prod2: IProduct = {
       id: 2,
       name: 'Trousers',
       price: 90,
-      image: '../../assets/products/trousers.jpg'
+      image: '../../assets/products/trousers.jpg',
+      amount: 1,
     }
     let prod3: IProduct = {
       id: 3,
       name: 'Black Jacket',
       price: 250,
-      image: '../../assets/products/jacket.jfif'
+      image: '../../assets/products/jacket.jfif',
+      amount: 1,
     }
     products.push(prod1, prod2, prod3);
 
@@ -77,19 +86,22 @@ export class DataService {
       id: 4,
       name: 'Sunglasses',
       price: 110,
-      image: '../../assets/products/sunglasses.jpg'
+      image: '../../assets/products/sunglasses.jpg',
+      amount: 1,
     }
     let prod2: IProduct = {
       id: 5,
       name: 'Red solid Skirt',
       price: 60,
-      image: '../../assets/products/skirt.jpg'
+      image: '../../assets/products/skirt.jpg',
+      amount: 1,
     }
     let prod3: IProduct = {
       id: 6,
       name: 'Black Dress',
       price: 100,
-      image: '../../assets/products/dress.jfif'
+      image: '../../assets/products/dress.jfif',
+      amount: 1,
     }
     products.push(prod1, prod2, prod3);
 
